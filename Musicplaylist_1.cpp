@@ -63,3 +63,36 @@ void deleteAtBeginning(Song*& head) {
     head = head->next;
     delete temp;
 }
+// Function to delete a song from the end of the playlist
+void deleteAtEnd(Song*& head) {
+    if (head == nullptr) {
+        cout << "Playlist is empty." << endl;
+        return;
+    }
+    if (head->next == nullptr) {
+        delete head;
+        head = nullptr;
+    } else {
+        Song* temp = head;
+        while (temp->next->next != nullptr) {
+            temp = temp->next;
+        }
+        delete temp->next;
+        temp->next = nullptr;
+    }
+}
+
+// Function to delete a song from a specific position in the playlist
+void deleteAtPosition(Song*& head, int position) {
+    if (position <= 0) {
+        cout << "Position must be greater than 0." << endl;
+        return;
+    }
+    if (position == 1) {
+        deleteAtBeginning(head);
+        return;
+    }
+    Song* temp = head;
+    for (int i = 1; i < position - 1 && temp != nullptr; ++i) {
+        temp = temp->next;
+    }
