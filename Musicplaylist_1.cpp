@@ -154,3 +154,37 @@ case 4:
 
     return 0;
 }
+
+cout << "6. Delete a song from a specific position\n";
+        cout << "7. Display the playlist\n";
+        cout << "8. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+        
+        switch (choice) {
+            case 1:
+                cout << "Enter the song title: ";
+                cin >> ws; // To ignore leading whitespaces
+                getline(cin, title);
+                cout << "Enter the artist name: ";
+                getline(cin, artist);
+                insertAtBeginning(playlist, title, artist);
+                break;
+            case 2:
+                cout << "Enter the song title: ";
+                cin >> ws;
+                getline(cin, title);
+                cout << "Enter the artist name: ";
+                getline(cin, artist);
+                insertAtEnd(playlist, title, artist);
+                break;
+            case 3:
+                cout << "Enter the position: ";
+                cin >> position;
+                cout << "Enter the song title: ";
+                cin >> ws;
+                getline(cin, title);
+                cout << "Enter the artist name: ";
+                getline(cin, artist);
+                insertAtPosition(playlist, title, artist, position);
+                break;
