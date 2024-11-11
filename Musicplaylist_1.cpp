@@ -96,3 +96,37 @@ void deleteAtPosition(Song*& head, int position) {
     for (int i = 1; i < position - 1 && temp != nullptr; ++i) {
         temp = temp->next;
     }
+    
+    if (temp != nullptr && temp->next != nullptr) {
+        Song* toDelete = temp->next;
+        temp->next = temp->next->next;
+        delete toDelete;
+    } else {
+        cout << "Position out of bounds." << endl;
+    }
+}
+
+// Function to display the playlist
+void displayPlaylist(Song* head) {
+    if (head == nullptr) {
+        cout << "Playlist is empty." << endl;
+        return;
+    }
+    Song* temp = head;
+    while (temp != nullptr) {
+        cout << temp->title << " by " << temp->artist << endl;
+        temp = temp->next;
+    }
+}
+
+int main() {
+    Song* playlist = nullptr;
+    int choice, position;
+    string title, artist;
+    
+    do {
+        cout << "\nMusic Playlist Menu:\n";
+        cout << "1. Insert a song at the beginning\n";
+        cout << "2. Insert a song at the end\n";
+        cout << "3. Insert a song at a specific position\n";
+        cout << "4. Delete a song from the beginning\n";
