@@ -118,6 +118,20 @@ void displayPlaylist(Song* head) {
         temp = temp->next;
     }
 }
+// Function to validate integer input
+int getValidInput() {
+    int choice;
+    while (true) {
+        cin >> choice;
+        if (cin.fail()) {
+            cin.clear(); // Clear the error flag
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore invalid input
+            cout << "Invalid input. Please enter a valid integer: ";
+        } else {
+            return choice;
+        }
+    }
+}
 
 int main() {
     Song* playlist = nullptr;
@@ -135,7 +149,7 @@ int main() {
         cout << "7. Display the playlist\n";
         cout << "8. Exit\n";
         cout << "Enter your choice: ";
-        cin >> choice;
+        choice =getValidInput();
         
         switch (choice) {
             case 1:
@@ -156,7 +170,7 @@ int main() {
                 break;
             case 3:
                 cout << "Enter the position: ";
-                cin >> position;
+                 position=getValidInput();
                 cout << "Enter the song title: ";
                 cin >> ws;
                 getline(cin, title);
