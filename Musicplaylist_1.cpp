@@ -131,32 +131,7 @@ int main() {
         cout << "3. Insert a song at a specific position\n";
         cout << "4. Delete a song from the beginning\n";
         cout << "5. Delete a song from the end\n";
-case 4:
-                deleteAtBeginning(playlist);
-                break;
-            case 5:
-                deleteAtEnd(playlist);
-                break;
-            case 6:
-                cout << "Enter the position: ";
-                cin >> position;
-                deleteAtPosition(playlist, position);
-                break;
-            case 7:
-                displayPlaylist(playlist);
-                break;
-            case 8:
-                cout << "Exiting the application.\n";
-                break;
-            default:
-                cout << "Invalid choice. Please try again.\n";
-        }
-    } while (choice != 8);
-
-    return 0;
-}
-
-cout << "6. Delete a song from a specific position\n";
+        cout << "6. Delete a song from a specific position\n";
         cout << "7. Display the playlist\n";
         cout << "8. Exit\n";
         cout << "Enter your choice: ";
