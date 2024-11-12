@@ -130,3 +130,5 @@ int main() {
         cout << "2. Insert a song at the end\n";
         cout << "3. Insert a song at a specific position\n";
         cout << "4. Delete a song from the beginning\n";
+        cout << "5. Delete a song from the end\n";
+    
